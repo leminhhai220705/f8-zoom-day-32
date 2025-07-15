@@ -225,8 +225,6 @@ const renderRoot = (root, parent, folderParent = null) => {
       };
 
       folderParent.oncontextmenu = (e) => {
-        console.log(e.target);
-
         e.preventDefault();
 
         const currentName = e.target.closest("a");
@@ -257,7 +255,6 @@ const renderRoot = (root, parent, folderParent = null) => {
 
           input.onblur = (e) => {
             newValue.textContent = e.target.value;
-            console.log(newValue);
 
             currentItem.replaceChild(newValue, input);
             input.remove();
@@ -265,7 +262,6 @@ const renderRoot = (root, parent, folderParent = null) => {
         };
 
         deleteBtn.onclick = () => {
-          console.log(folderParent);
           currentItem.remove();
         };
       };
